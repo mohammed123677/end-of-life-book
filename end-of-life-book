@@ -1,0 +1,635 @@
+<DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End of Life | By Mohammed Alkrine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0a0d14',
+                            card: '#121722',
+                            border: '#1f293d',
+                            accent: '#d4af37', // Metallic Gold
+                            goldGlow: 'rgba(212, 175, 55, 0.15)',
+                            emerald: '#10b981',
+                            neonBlue: '#38bdf8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0d14;
+            color: #f3f4f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fff2a3 0%, #d4af37 50%, #aa7c11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+        }
+        .gold-border-glow:hover {
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0d14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f293d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-black">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-brand-dark/80 border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand / Author -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-700 flex items-center justify-center font-bold text-black text-xl shadow-lg shadow-amber-500/20">
+                    E
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+                        End of Life
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">Vol. 1</span>
+                    </h1>
+                    <p class="text-xs text-gray-400">By Mohammed Alkrine</p>
+                </div>
+            </div>
+
+            <!-- Global Progress Bar Pill -->
+            <div class="hidden md:flex items-center gap-3 bg-brand-card px-4 py-2 rounded-full border border-brand-border">
+                <i class="fa-solid fa-book-bookmark text-amber-400 text-sm"></i>
+                <div class="text-xs">
+                    <span class="text-gray-400">Progress:</span>
+                    <span class="font-bold text-white ml-1">40 / 100 Chapters</span>
+                </div>
+                <div class="w-24 bg-gray-800 h-2 rounded-full overflow-hidden ml-1">
+                    <div class="bg-gradient-to-r from-amber-500 to-emerald-400 h-full w-[40%]"></div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                <a href="#chapters" class="text-gray-300 hover:text-amber-400 transition-colors">Chapters</a>
+                <a href="#tracker" class="text-gray-300 hover:text-amber-400 transition-colors">Habit Tracker</a>
+                <a href="#author" class="text-gray-300 hover:text-amber-400 transition-colors">Author Journey</a>
+                <a href="#suggest" class="text-gray-300 hover:text-amber-400 transition-colors">Ideas</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="flex items-center space-x-3">
+                <button onclick="openModal(21)" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-sm px-4 sm:px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-amber-500/20 active:scale-95">
+                    <i class="fa-solid fa-book-open mr-2"></i>Read Chapter 21
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+        <!-- Glow accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/3 left-10 w-[300px] h-[300px] bg-sky-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-card border border-brand-border mb-6">
+                <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Self-Help & Discipline Manual</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight mb-6">
+                Master Discipline. <br class="hidden sm:inline">
+                <span class="gold-gradient-text">Build Your Legacy.</span> <br class="hidden sm:inline">
+                Control Your Future.
+            </h1>
+
+            <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 font-normal leading-relaxed">
+                Written by 14-year-old aspiring cardiovascular surgeon Mohammed Alkrine. A direct, practical playbook on time auditing, neuroscience, study systems, and relentless execution.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                <button onclick="openModal(23)" class="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-amber-500/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-base">
+                    Read Chapter 23: Pressure & Focus
+                </button>
+                <a href="#chapters" class="w-full sm:w-auto bg-brand-card hover:bg-brand-border text-white font-semibold px-8 py-4 rounded-xl border border-brand-border transition-all text-base">
+                    Explore All 40 Chapters
+                </a>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
+                <div class="bg-brand-card/90 p-6 rounded-2xl border border-brand-border text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-1" id="stat-written">40</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider font-medium">Chapters Drafted</div>
+                </div>
+                <div class="bg-brand-card/90 p-6 rounded-2xl border border-brand-border text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-sky-400 mb-1">4</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider font-medium">Days of Intensive Writing</div>
+                </div>
+                <div class="bg-brand-card/90 p-6 rounded-2xl border border-brand-border text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">100</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider font-medium">Goal Chapters</div>
+                </div>
+                <div class="bg-brand-card/90 p-6 rounded-2xl border border-brand-border text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-purple-400 mb-1">14 y/o</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider font-medium">Author Age</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter Explorer Section -->
+    <section id="chapters" class="py-16 bg-brand-dark/50 border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-white tracking-tight flex items-center gap-3">
+                        <i class="fa-solid fa-list-check text-amber-400"></i> Chapter Explorer
+                    </h2>
+                    <p class="text-gray-400 text-sm mt-1">Browse summaries, key takeaways, and previews from Chapters 1 through 40.</p>
+                </div>
+
+                <!-- Search & Filters -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <div class="relative w-full sm:w-64">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
+                        <input type="text" id="chapter-search" onkeyup="filterChapters()" placeholder="Search topics, keywords..." class="w-full bg-brand-card border border-brand-border rounded-xl pl-9 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-400 transition-colors">
+                    </div>
+                    <select id="tag-filter" onchange="filterChapters()" class="bg-brand-card border border-brand-border rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400 transition-colors">
+                        <option value="ALL">All Categories</option>
+                        <option value="Mindset">Mindset</option>
+                        <option value="Focus">Focus & Exams</option>
+                        <option value="Biology">Health & Neuroscience</option>
+                        <option value="Habits">Daily Systems</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Chapters Grid -->
+            <div id="chapters-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Javascript will populate chapter cards dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Habit Tracker Widget Section -->
+    <section id="tracker" class="py-16 border-t border-brand-border bg-brand-card/40 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <span class="text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">Chapter-Driven Action</span>
+                <h2 class="text-3xl font-extrabold text-white mt-3">Interactive Daily Habit Tracker</h2>
+                <p class="text-gray-400 text-sm mt-2">Test out the core pillars taught in the book. Track your daily wins right here on the page.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto bg-brand-card p-6 sm:p-8 rounded-2xl border border-brand-border shadow-2xl gold-border-glow">
+                <div class="flex items-center justify-between mb-6 pb-4 border-b border-brand-border">
+                    <div>
+                        <h3 class="text-lg font-bold text-white" id="tracker-date">Today's Protocol</h3>
+                        <p class="text-xs text-gray-400">Complete your daily non-negotiables</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-2xl font-black text-amber-400" id="completion-percentage">0%</span>
+                        <p class="text-xs text-gray-400">Done</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4" id="habit-list">
+                    <!-- Habit Items -->
+                    <div onclick="toggleHabit(0)" class="habit-item flex items-center justify-between p-4 rounded-xl border border-brand-border bg-brand-dark/60 cursor-pointer hover:border-amber-400/40 transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-lg border-2 border-gray-600 flex items-center justify-center text-xs habit-checkbox">
+                                <i class="fa-solid fa-check opacity-0 transition-opacity"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-white">3-Hour Deep Study Session</h4>
+                                <p class="text-xs text-gray-500">Active Recall & No Phone Interruption</p>
+                            </div>
+                        </div>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-400 font-medium">Focus</span>
+                    </div>
+
+                    <div onclick="toggleHabit(1)" class="habit-item flex items-center justify-between p-4 rounded-xl border border-brand-border bg-brand-dark/60 cursor-pointer hover:border-amber-400/40 transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-lg border-2 border-gray-600 flex items-center justify-center text-xs habit-checkbox">
+                                <i class="fa-solid fa-check opacity-0 transition-opacity"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-white">45-Min Physical Conditioning</h4>
+                                <p class="text-xs text-gray-500">Run or Weight Training for Cardiovascular Health</p>
+                            </div>
+                        </div>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 font-medium">Health</span>
+                    </div>
+
+                    <div onclick="toggleHabit(2)" class="habit-item flex items-center justify-between p-4 rounded-xl border border-brand-border bg-brand-dark/60 cursor-pointer hover:border-amber-400/40 transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-lg border-2 border-gray-600 flex items-center justify-center text-xs habit-checkbox">
+                                <i class="fa-solid fa-check opacity-0 transition-opacity"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-white">Digital Detox / Zero Social Media Scrolling</h4>
+                                <p class="text-xs text-gray-500">Protecting Dopamine Baseline & Focus</p>
+                            </div>
+                        </div>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 font-medium">Mindset</span>
+                    </div>
+
+                    <div onclick="toggleHabit(3)" class="habit-item flex items-center justify-between p-4 rounded-xl border border-brand-border bg-brand-dark/60 cursor-pointer hover:border-amber-400/40 transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-lg border-2 border-gray-600 flex items-center justify-center text-xs habit-checkbox">
+                                <i class="fa-solid fa-check opacity-0 transition-opacity"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-white">Clean Workspace Setup (Evening Prior)</h4>
+                                <p class="text-xs text-gray-500">Clearing desk to remove cognitive friction</p>
+                            </div>
+                        </div>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-400 font-medium">Environment</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-brand-border flex items-center justify-between text-xs text-gray-400">
+                    <span>Keep your streak alive.</span>
+                    <button onclick="resetTracker()" class="hover:text-amber-400 transition-colors">Reset Tracker</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Spotlight -->
+    <section id="author" class="py-20 border-t border-brand-border relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Graphic / Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-gradient-to-b from-brand-card to-brand-dark p-8 rounded-3xl border border-brand-border gold-border-glow">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-amber-500 to-amber-200 text-black font-black text-3xl flex items-center justify-center mb-6 shadow-lg shadow-amber-500/20">
+                            MA
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-1">Mohammed Alkrine</h3>
+                        <p class="text-amber-400 font-medium text-sm mb-4">10th Grader & Aspiring Cardiovascular Surgeon</p>
+                        
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            "I wrote this book to answer one massive question: How do we stop wasting time and actually build something meaningful? Life is short, gorgeous, and completely up to you."
+                        </p>
+
+                        <div class="space-y-3 text-xs text-gray-400 border-t border-brand-border pt-4">
+                            <div class="flex items-center justify-between">
+                                <span>Academic Path:</span>
+                                <span class="text-white font-medium">Pre-Med Focus / High School Honors</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Manuscript Pace:</span>
+                                <span class="text-emerald-400 font-semibold">10 Chapters / 2 Days</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Goal Volume:</span>
+                                <span class="text-white font-medium">100 Chapters</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-wider">
+                        Author Spotlight
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Balancing High School, Pre-Med Dreams, and 100 Chapters.
+                    </h2>
+
+                    <p class="text-gray-300 leading-relaxed">
+                        At age 14, Mohammed Alkrine set out to build a comprehensive self-improvement manuscript. Combining practical study strategies, neurochemistry, cardiovascular endurance, and real-life high school discipline, *End of Life* serves as an uncompromising guide for young leaders refusing the average path.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+                            <i class="fa-solid fa-brain text-sky-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white text-sm">Actionable Science</h4>
+                            <p class="text-xs text-gray-400 mt-1">Explaining active recall, dopamine baselines, and sleep biology in plain terms.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+                            <i class="fa-solid fa-heart-pulse text-amber-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white text-sm">Surgical Precision</h4>
+                            <p class="text-xs text-gray-400 mt-1">Applying the focus and stamina of medicine into everyday habits.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Reader Suggestions Section -->
+    <section id="suggest" class="py-16 border-t border-brand-border bg-brand-dark/80">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-card p-8 sm:p-10 rounded-3xl border border-brand-border">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">Suggest a Future Chapter Topic</h2>
+                    <p class="text-gray-400 text-sm mt-2">Mohammed is expanding the manuscript to 100 chapters. What do you want to learn next?</p>
+                </div>
+
+                <form onsubmit="handleSuggestion(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Your Name</label>
+                            <input type="text" required placeholder="e.g. Alex M." class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Suggested Tag</label>
+                            <select class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400">
+                                <option>Focus & Schoolwork</option>
+                                <option>Physical Training & Health</option>
+                                <option>Mindset & Resilience</option>
+                                <option>Leadership & Relationships</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Topic Idea or Question</label>
+                        <textarea required rows="3" placeholder="Describe the topic or challenge you want addressed in upcoming chapters..." class="w-full bg-brand-dark border border-brand-border rounded-xl p-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-400"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-extrabold py-3.5 rounded-xl transition-all shadow-lg shadow-amber-500/20">
+                        Submit Topic Idea
+                    </button>
+                </form>
+
+                <div id="form-feedback" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-center text-sm">
+                    <i class="fa-solid fa-circle-check mr-2"></i> Thank you! Your topic suggestion has been received.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-border py-8 text-center text-xs text-gray-500 bg-brand-dark">
+        <p>© 2026 Mohammed Alkrine. All rights reserved. *End of Life* Manuscript Project.</p>
+    </footer>
+
+    <!-- Sample Chapter Reading Modal -->
+    <div id="chapter-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-brand-card w-full max-w-3xl max-h-[90vh] rounded-2xl border border-brand-border shadow-2xl overflow-hidden flex flex-col transform scale-95 transition-transform duration-300" id="modal-container">
+            
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-brand-border flex items-center justify-between bg-brand-dark/50">
+                <div>
+                    <span class="text-xs font-semibold text-amber-400 uppercase tracking-widest" id="modal-chapter-number">Chapter 21</span>
+                    <h3 class="text-xl font-bold text-white mt-0.5" id="modal-chapter-title">The 10-Year Vision</h3>
+                </div>
+                <button onclick="closeModal()" class="w-9 h-9 rounded-full bg-brand-border hover:bg-gray-700 text-gray-300 flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content (Reading View) -->
+            <div class="p-6 sm:p-8 overflow-y-auto space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed" id="modal-chapter-body">
+                <!-- Content loaded dynamically -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-brand-border bg-brand-dark/50 flex items-center justify-between text-xs text-gray-400">
+                <span>Book Manuscript: *End of Life*</span>
+                <button onclick="closeModal()" class="px-4 py-2 rounded-lg bg-brand-border text-white hover:bg-gray-700 font-medium transition-colors">Close Reader</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data for Chapters 1-40
+        const chapterData = [
+            {
+                num: 21,
+                title: "The 10-Year Vision (Consistency Over Intensity)",
+                category: "Mindset",
+                summary: "Why short bursts of hype fail compared to playing the long game for decades.",
+                takeaway: "Intensity starts the journey, but consistency keeps you alive.",
+                content: `When you first decide to change your life, put down your phone, cut out junk food, and start grinding, you get a huge burst of excitement. You write down your goals, clean off your desk, go to the gym, and study for hours. But then a week passes. The hype fades, you feel tired, and that initial spark disappears. This is where most people quit. They confuse a short burst of motivation with true, lasting discipline.<br><br>If you want to achieve massive goals—like becoming a surgeon, writing a 50-chapter book, or building financial independence—you have to stop thinking in days and weeks. You have to start thinking in years. High school, college, and medical training are not quick sprints; they are long marathons. Going hard for two weeks and burning out for two months gets you nowhere. Real success comes from showing up every single day and putting in steady work, even on days when you feel average or tired.<br><br>Motivation comes and goes like the wind, but your daily system stays constant. When motivation dies, your routine takes over. You show up to study not because you feel like it, but because your daily contract demands it. Small, consistent daily efforts compound into massive results over five or ten years. Stop looking for overnight transformations. Lock your eyes on the long horizon, embrace the journey, and build a mindset engineered to last a lifetime.`
+            },
+            {
+                num: 22,
+                title: "Controlling the Controllables",
+                category: "Mindset",
+                summary: "Focusing entirely on daily input while eliminating stress about variables outside your control.",
+                takeaway: "Master your daily effort; let the outcomes handle themselves.",
+                content: `When you set big goals, it is easy to fall into the trap of trying to control every single detail of your life. You organize your daily schedule down to the minute, count the years between high school and your career, and worry constantly about whether everything will turn out perfect. But true maturity begins when you realize that while your daily effort is completely in your control, the ultimate outcome often depends on variables you cannot predict.<br><br>Focusing entirely on your input—the long study sessions, the morning workouts, helping your family, and staying disciplined—is the ultimate shield against stress and anxiety. When you take complete ownership of your daily work, failure loses its power to destroy your confidence.<br><br>When you focus on what you can control, you drop the heavy weight of perfectionism. If a test doesn't go the way you planned, or a goal takes longer than expected, you don't break down. You look at what happened, fix your approach, and get right back to work.`
+            },
+            {
+                num: 23,
+                title: "Focus Under Pressure (Conquering Exam Stress)",
+                category: "Focus",
+                summary: "How to use adrenaline to sharpen your prefrontal cortex instead of panicking.",
+                takeaway: "Reframe physical stress as readiness, not fear.",
+                content: `Stress is a natural body response when you face high-stakes moments, whether it is a difficult high school exam, an athletic match, or speaking in front of a crowd. Most teenagers think stress is a sign of weakness, letting their hands shake, heart race, and mind panic. But stress is just your body's built-in survival system releasing adrenaline to heighten your awareness. The difference between an average student and an elite performer is that average people let stress crush them, while elite people use it as fuel.<br><br>Biologically, when you face a high-pressure situation, your sympathetic nervous system kicks in, increasing your heart rate and pumping blood to your brain. If you view that physical feeling as fear, your brain freezes up. But if you tell yourself that physical feeling is readiness, your prefrontal cortex—the part of the brain that solves complex math and logic problems—stays active. Before taking a hard test, take three slow, deep breaths through your nose to lower your heart rate and regain full mental control.<br><br>Anxiety is settled when you ground yourself in your preparation. Combine deep preparation with a calm mind, and you will handle any pressure with total composure.`
+            },
+            {
+                num: 24,
+                title: "Time Auditing (Finding Hidden Hours)",
+                category: "Habits",
+                summary: "Eliminating micro-distractions to reclaim 3+ hours of lost focus every day.",
+                takeaway: "Time is a non-renewable asset; audit your day relentlessly.",
+                content: `Almost every high schooler complains that they don't have enough time. They say they are too busy with school to study properly, go to the gym, or build good daily habits. But if you look closely at how most teenagers spend their twenty-four hours, you quickly realize that time isn't missing—it is leaking away through small, mindless distractions.<br><br>To fix this, you have to run a strict time audit. For three days straight, write down exactly what you do every single hour from the moment you wake up until you go to sleep. Be completely honest with yourself. You will be shocked to see how many hours vanish into useless activities.<br><br>Treat your hours like valuable currency. Invest them into your mind and body, and never let a day slip away without moving closer to your targets.`
+            },
+            {
+                num: 25,
+                title: "The Power of Speech",
+                category: "Mindset",
+                summary: "How self-talk changes brain chemistry and neuroplasticity.",
+                takeaway: "Eliminate defeatist language to program your mind for success.",
+                content: `The words you speak out loud and the thoughts you say silently in your head directly shape your reality. When you constantly say things like "This class is too hard," "I'm terrible at math," or "I can't understand this," you are programming your mind to fail. Your brain naturally looks for proof to match whatever statements you feed it.<br><br>Science shows that your language changes neural pathways in the brain through neuroplasticity. When you deliberately switch your words from "I can't do this" to "I haven't mastered this yet, but I will keep working until I do," your brain shifts into an active problem-solving mode.`
+            },
+            {
+                num: 26,
+                title: "Physical Endurance (The Runner's Mindset)",
+                category: "Biology",
+                summary: "Using cardiovascular conditioning to build raw mental resilience.",
+                takeaway: "Pushing past physical fatigue builds stamina for 3-hour study sessions.",
+                content: `Building physical discipline isn't just about lifting weights; it is equally about testing your lungs, heart, and mental grit through long runs and tough conditioning. When you run, there comes a specific moment where your lungs burn, your legs feel heavy, and your brain screams at you to stop. That exact moment is where real growth begins.<br><br>Cardiovascular exercise increases blood flow to the brain, releases endorphins, and promotes the growth of new brain cells. Put on your running shoes, step outside regardless of the weather, and build a mind and body capable of handling massive challenges.`
+            },
+            {
+                num: 31,
+                title: "Resetting Your Dopamine",
+                category: "Biology",
+                summary: "Breaking free from cheap instant gratification to make hard work satisfying again.",
+                takeaway: "Starve your brain of cheap scrolling to restore deep focus.",
+                content: `Every time you scroll on your phone, play video games for hours, or eat junk food, your brain receives a spike of dopamine. Dopamine is the molecule of drive and motivation, but when you flood your brain with quick hits, you ruin your baseline. That is why after hours of scrolling, reading a single page of a textbook feels impossibly boring.<br><br>When you cut out instant gratification, your dopamine baseline resets. Suddenly, hard things become satisfying again. Take control of your neurochemistry and earn your dopamine through real labor.`
+            },
+            {
+                num: 32,
+                title: "Sleep & Memory Consolidation",
+                category: "Biology",
+                summary: "Why late-night cramming destroys memory and how deep sleep locks in knowledge.",
+                takeaway: "Sleep is the ultimate cognitive performance enhancer.",
+                content: `A lot of teenagers brag about staying up until 2:00 AM studying, thinking pulling late nights is a badge of honor. But pulling all-nighters destroys your brain's ability to function. Memory consolidation happens during deep sleep and REM cycles. If you cut your sleep short, you literally erase the neural connections you worked so hard to build.`
+            },
+            {
+                num: 35,
+                title: "Active Recall & Spaced Repetition",
+                category: "Focus",
+                summary: "Why highlighting notes is useless and how the blurting method guarantees top grades.",
+                takeaway: "Passive reading creates the illusion of learning; active recall creates mastery.",
+                content: `Most students study completely wrong by highlighting sentences and re-reading notes. Reading notes is passive. If you want to master hard subjects like biology or chemistry, use Active Recall. Close the textbook, take out a blank sheet of paper, and write down every single concept from memory. That friction is what creates strong neural connections.`
+            }
+        ];
+
+        // Populate Chapter Cards
+        function renderChapters(chaptersToRender) {
+            const grid = document.getElementById('chapters-grid');
+            grid.innerHTML = '';
+
+            chaptersToRender.forEach(ch => {
+                const card = document.createElement('div');
+                card.className = 'bg-brand-card p-6 rounded-2xl border border-brand-border flex flex-col justify-between gold-border-glow transition-all';
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20">Ch. ${ch.num}</span>
+                            <span class="text-xs text-gray-400 font-medium">${ch.category}</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">${ch.title}</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">${ch.summary}</p>
+                    </div>
+                    <div>
+                        <div class="p-3 rounded-xl bg-brand-dark/70 border border-brand-border mb-4 text-xs text-amber-300 font-medium">
+                            <i class="fa-solid fa-key mr-1 text-amber-400"></i> ${ch.takeaway}
+                        </div>
+                        <button onclick="openModal(${ch.num})" class="w-full py-2.5 rounded-xl bg-brand-border hover:bg-gray-700 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-book-open text-amber-400"></i> Read Chapter Preview
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Search and Category Filter logic
+        function filterChapters() {
+            const searchQuery = document.getElementById('chapter-search').value.toLowerCase();
+            const categoryQuery = document.getElementById('tag-filter').value;
+
+            const filtered = chapterData.filter(ch => {
+                const matchesSearch = ch.title.toLowerCase().includes(searchQuery) || ch.summary.toLowerCase().includes(searchQuery);
+                const matchesCategory = (categoryQuery === 'ALL') || (ch.category === categoryQuery);
+                return matchesSearch && matchesCategory;
+            });
+
+            renderChapters(filtered);
+        }
+
+        // Modal Reader
+        function openModal(chNum) {
+            const ch = chapterData.find(item => item.num === chNum) || chapterData[0];
+            document.getElementById('modal-chapter-number').innerText = `Chapter ${ch.num}`;
+            document.getElementById('modal-chapter-title').innerText = ch.title;
+            document.getElementById('modal-chapter-body').innerHTML = ch.content;
+
+            const modal = document.getElementById('chapter-modal');
+            const container = document.getElementById('modal-container');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                container.classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('chapter-modal');
+            const container = document.getElementById('modal-container');
+            modal.classList.add('opacity-0');
+            container.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Habit Tracker Widget State
+        let habitState = [false, false, false, false];
+
+        function toggleHabit(index) {
+            habitState[index] = !habitState[index];
+            updateHabitUI();
+        }
+
+        function updateHabitUI() {
+            const items = document.querySelectorAll('.habit-item');
+            let completedCount = 0;
+
+            habitState.forEach((isDone, idx) => {
+                const checkbox = items[idx].querySelector('.habit-checkbox');
+                const icon = checkbox.querySelector('i');
+
+                if (isDone) {
+                    completedCount++;
+                    items[idx].classList.add('border-emerald-500/50', 'bg-emerald-500/10');
+                    checkbox.classList.add('bg-emerald-500', 'border-emerald-500', 'text-black');
+                    icon.classList.remove('opacity-0');
+                } else {
+                    items[idx].classList.remove('border-emerald-500/50', 'bg-emerald-500/10');
+                    checkbox.classList.remove('bg-emerald-500', 'border-emerald-500', 'text-black');
+                    icon.classList.add('opacity-0');
+                }
+            });
+
+            const percent = Math.round((completedCount / habitState.length) * 100);
+            document.getElementById('completion-percentage').innerText = `${percent}%`;
+        }
+
+        function resetTracker() {
+            habitState = [false, false, false, false];
+            updateHabitUI();
+        }
+
+        // Suggestion Form Handler
+        function handleSuggestion(e) {
+            e.preventDefault();
+            document.getElementById('form-feedback').classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                document.getElementById('form-feedback').classList.add('hidden');
+            }, 4000);
+        }
+
+        // On Load Initializations
+        window.onload = function() {
+            renderChapters(chapterData);
+            document.getElementById('tracker-date').innerText = `Today's Protocol (${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })})`;
+        };
+    </script>
+</body>
+</html>
